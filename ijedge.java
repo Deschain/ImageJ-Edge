@@ -9,7 +9,7 @@ import ij.process.*;
 import ij.gui.*;
 import ij.plugin.BMP_Writer;
 
-public class visionartificial implements PlugIn {
+public class VisionArtificial implements PlugIn {
 
   public void run(String arg) {
   
@@ -58,7 +58,6 @@ public class visionartificial implements PlugIn {
         }
       }
   
-  
     IJ.selectWindow("Brightness");
     int [][] brillo = new int[h][w];
   
@@ -75,7 +74,6 @@ public class visionartificial implements PlugIn {
      IJ.run("Close");
   
     //Outline calculation
-    
     int [][] matrizFinal = new int[h][w];
     for (int y = 0; (y < h); y++){
       for (int x = 0; (x < w ); x++) {
@@ -88,10 +86,9 @@ public class visionartificial implements PlugIn {
   			  matrizFinal[y][x] = 0;
         }
   		}
-    }//fori
+    }
   
     //Save and show result
-    
     ByteProcessor imgFinal = new ByteProcessor (w, h);
   
     imgFinal.createProcessor(w,h);
